@@ -1,20 +1,10 @@
 #include <stdio.h>
 
-void mult(int n, int nb)
-{
-  printf("*****\n");
-
-  printf("Table des %d :\n", n); // message d'annonce de la table
-
-  for (int i = 1; i <= nb; i++) // calculer jusqu'à nb
-  {
-    printf("%d*%d=%d\n", i, n, i*n); // multiplier i par n
-  }
-
-  printf("*****\n");
-}
+// Prototypes //
+void mult(int n, int nb);
 
 
+// Programme Principal //
 int main( )
 {
   char choice;
@@ -36,4 +26,20 @@ int main( )
   } while (choice != 'n');
   
   return 0;
+}
+
+
+// FONCTIONS //
+void mult(int n, int nb)
+{
+  printf("*****\n");
+
+  printf("Table des %d :\n", n); // message d'annonce de la table
+
+  for (int i = 1; i <= nb; i++) // calculer jusqu'à nb
+  {
+    printf("%d*%d=%d\n", i, n, i*n); // multiplier i par n
+  }
+
+  printf("*****\n");
 }

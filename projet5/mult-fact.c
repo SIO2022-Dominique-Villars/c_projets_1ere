@@ -1,43 +1,11 @@
 #include <stdio.h>
 
-void fact()
-{
-  int num, res = 1;
-
-  printf("Saisir un nombre pour afficher sa factorielle :\n");
-  scanf("%d", &num);
-
-  for (int i = 1; i <= num; i++) // calculer de i=1 à mon numéro
-  {
-    res *= i; // Mon résultat multiplié par i
-  }
-
-  printf("La factorielle de %d est %d\n", num, res);
-}
-
-void mult()
-{
-  int n, nb;
-
-  printf("Saisir un nombre pour afficher sa table de multiplication :\n");
-  scanf("%d", &n);
-
-  printf("Jusqu'où souhaitez-vous aller ?\n");
-  scanf("%d", &nb);
-
-  printf("Table des %d :\n", n); // message d'annonce de la table
-
-  printf("*****\n");
-
-  for (int i = 1; i <= nb; i++) // calculer jusqu'à nb
-  {
-    printf("%d*%d=%d\n", i, n, i*n); // multiplier i par n
-  }
-
-  printf("*****\n");
-}
+// Prototypes //
+void fact();
+void mult();
 
 
+// Programme Principal //
 int main( )
 {
   char inprogress;
@@ -65,4 +33,43 @@ int main( )
   } while (inprogress != 'n');
   
   return 0;
+}
+
+
+// FONCTIONS //
+void fact() // Programme factorielle
+{
+  int num, res = 1;
+
+  printf("Saisir un nombre pour afficher sa factorielle :\n");
+  scanf("%d", &num);
+
+  for (int i = 1; i <= num; i++)
+  {
+    res *= i; // Mon résultat multiplié par i
+  }
+
+  printf("La factorielle de %d est %d\n", num, res);
+}
+
+void mult() // Programme table de multiplication
+{
+  int n, nb;
+
+  printf("Saisir un nombre pour afficher sa table de multiplication :\n");
+  scanf("%d", &n);
+
+  printf("Jusqu'où souhaitez-vous aller ?\n");
+  scanf("%d", &nb);
+
+  printf("Table des %d :\n", n);
+
+  printf("*****\n");
+
+  for (int i = 1; i <= nb; i++)
+  {
+    printf("%d*%d=%d\n", i, n, i*n); // multiplier i par n
+  }
+
+  printf("*****\n");
 }

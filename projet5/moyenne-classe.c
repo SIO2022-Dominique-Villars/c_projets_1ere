@@ -1,7 +1,22 @@
 #include <stdio.h>
 
-// Calcule la moyenne d'un tableau
-float moyenne(float* table, int len_table)
+// Prototypes //
+float moyenne(float* table, int len_table);
+float best(float* table, int len_table);
+void notes( );
+
+
+// Programme Principal //
+int main( )
+{
+  notes( ); // Exécute la fonction notes
+
+  return 0;
+}
+
+
+// FONCTIONS //
+float moyenne(float* table, int len_table) // Retourne la moyenne d'un tableau
 {
   float moy, res = 0.0;
 
@@ -12,11 +27,10 @@ float moyenne(float* table, int len_table)
 
   moy = res / len_table; // Divise la somme des notes par le nombre de notes
 
-  return moy; // Renvoie la moyenne
+  return moy;
 }
 
-// Fonctions cherchant le nombre le plus grand d'une table
-float best(float* table, int len_table)
+float best(float* table, int len_table) // Retourne le nombre le plus grand d'un tableau
 {
   float res = 0;
 
@@ -29,28 +43,20 @@ float best(float* table, int len_table)
   return res; // Renvoie le nombre le plus grand
 }
 
-// Fonction Principale de la gestion des notes
-void notes( )
+void notes( ) // Gestion des notes
 {
   float notes[5]; // Nombre de notes
-  int len_notes = 5; // Taille du tableau
+  int len_notes = 5; // Taille du tableau notes
 
-  for (int i = 0; i < len_notes; i++) // Entrer les notes juqu'au nombre d'élèves 
+  for (int i = 0; i < len_notes; i++)
   {
-    printf("Veuillez saisir la note de l'élève n°%d :\n", i+1); // Indique qu'il faut saisir une note pour l'élève
-    scanf("%f", &notes[i]); // Assigne ma note à l'élève i de mon tableau
+    printf("Veuillez saisir la note de l'élève n°%d :\n", i+1);
+    scanf("%f", &notes[i]);
   }
   
-  float moy = moyenne(notes, len_notes); // Calcule la moyenne de la classe
-  printf("La moyenne est de %.2f\n", moy); // Affiche la moyenne de la classe
+  float moy = moyenne(notes, len_notes); // Récupère la moyenne de la classe
+  printf("La moyenne est de %.2f\n", moy);
 
-  float bes = best(notes, len_notes); // Cherche la meilleure note du tableau
-  printf("La meilleure note est %.2f\n", bes); // Affiche la meilleure note
-}
-
-int main( )
-{
-  notes( ); // Exécute la fonction notes
-
-  return 0;
+  float bes = best(notes, len_notes); // Récupère la meilleure note
+  printf("La meilleure note est %.2f\n", bes);
 }

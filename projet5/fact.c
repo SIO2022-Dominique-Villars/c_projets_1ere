@@ -1,18 +1,10 @@
 #include <stdio.h>
 
-void fact(int num)
-{
-  int res = 1; // Initialisation du resultat à 1 
-
-  for (int i = 1; i <= num; i++) // calculer de i=1 à mon numéro
-  {
-    res *= i; // Mon résultat multiplié par i
-  }
-
-  printf("La factorielle de %d est %d\n", num, res);
-}
+// Prototypes //
+void fact(int num);
 
 
+// Programme Principal //
 int main( )
 {
   char choice;
@@ -30,7 +22,19 @@ int main( )
 
   } while (choice != 'n');
   
-
-
   return 0;
+}
+
+
+// FONCTIONS //
+void fact(int num) // Caclcule et affiche la factorielle
+{
+  int res = 1; // Initialisation du resultat à 1 
+
+  for (int i = 1; i <= num; i++) // calculer de i=1 à mon numéro
+  {
+    res *= i; // Mon résultat multiplié par i
+  }
+
+  printf("La factorielle de %d est %d\n", num, res);
 }
